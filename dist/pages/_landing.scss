@@ -1,0 +1,127 @@
+// BANNER
+
+.banner{
+    padding: 11rem 0 4rem 0;
+    &__wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin: 0 5rem;
+    }
+    &__text{
+        h1{
+            color: $clr-primary;
+            margin-bottom: 4rem;
+            font-size: 3.5rem;
+        }
+        p{
+            text-align: justify;
+            margin-bottom: 7rem;
+            font-size: 2rem;
+        }
+        
+        a{
+            display: inline-block;
+            @include bg--yellow;
+            text-transform: uppercase;
+            &:hover{
+                @include bg--yellow--hover;
+            }
+        }
+    }
+    img{
+        width: 30rem;
+        margin-bottom: 2rem;
+    }
+
+    @include mediaQuery($break-lg){
+        .banner{
+            // padding: 7rem 0 0 0;
+            &__wrapper{
+                flex-direction: row;
+                margin: 7rem 0 0 0;
+                img{
+                    width: unset;
+                }
+            }
+            &__text{
+                text-align: left;
+                h1{
+                    font-size: 11rem;
+                    max-width: 52rem;
+                    line-height: 0.8;
+                    margin-bottom: 5rem;
+                }
+                p{
+                    text-align: justify;
+                    max-width:40rem;
+                    margin-bottom: 6rem;
+                }
+            }
+            
+        }
+    }
+}
+
+// HM-SERVICES
+
+.hm-services{
+    padding: 5rem 0 3rem 0;
+    background: $clr-dark;
+    &__wrapper{
+        display: block;
+        margin: 0 5rem;
+    }
+
+    &__item{
+        text-align: center;
+        margin: 7rem 0 10rem 0;
+        i{
+            color: $clr-primary;
+            font-size: 5rem;
+            margin-bottom: 3rem;    
+        }
+        h4{
+            color: $clr-primary;
+            font-size: 2rem;
+            font-size: 2rem;
+            margin-bottom: 4rem;
+        }
+        p{
+            color: $clr-light;
+            text-align: justify;
+            margin-bottom: 4rem;
+            font-size: 2rem;
+        }
+        a{
+            display: inline-block;
+            @include bg--yellow;
+            &:hover{
+                @include bg--yellow--hover;
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        .hm-services{
+            &__wrapper{
+                
+            @include grid(3, 10rem);
+            }
+            &__item{
+                i{
+                    margin-bottom: 4rem;
+                }
+                h4{
+                    font-size: 2.5rem;
+                    margin-bottom: 4rem;
+                }
+                p{
+                    margin-bottom: 6rem;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@mixin grid($cols:4,$gap:1rem){
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    grid-gap: $gap;
+}
+
+@mixin mediaQuery ($width:48rem){
+    @media screen and (min-width:$width) {
+        @content
+    }
+}
+
+@mixin openNav{
+    right: 0;
+}
+@mixin hover{
+    color: $clr-primary;
+}
+
+@mixin bg--yellow{
+    background: $clr-primary;
+    border-radius: 3rem;
+    padding: 1.5rem 2.5rem;
+    color: $clr-light;
+    border: 1px solid transparent;
+}
+@mixin bg--yellow--hover{
+    background: $clr-dark;
+    border: 1px solid $clr-primary;
+    color: $clr-primary;
+}
+
+
+
+

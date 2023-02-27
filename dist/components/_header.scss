@@ -1,9 +1,15 @@
 // header
 .header{
+        position: fixed;
+        width: 100%;
+        &__wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     .branding{
         display: flex;
         align-items: center;
-
         img{
             width: 5rem;
         }
@@ -11,11 +17,97 @@
         h3{
             color: $clr-light;
             margin-left: 1rem;
-            font-size: 2.rem;
+            font-size: 2rem;
 
             span{
                 color: $clr-primary;
             }
         }
     }
+
+    
+// header nav
+
+    &__nav {
+        position: absolute;
+        top: 8rem;
+        right: -100rem;
+        background-color: $clr-light;
+        width: 100%;
+        height: 100vh;
+        transition: .5s ease;
+        ul{
+            text-align: center;
+
+            li{
+                padding: 3rem 0;
+                border-bottom: 1px solid $clr-dark;
+                a{
+                    color: $clr-dark;
+                    font-size: 2rem;
+                }
+            }
+            li:hover a{
+                @include hover;
+            }
+        }
+    }
+    .open{
+        @include openNav;
+    }
+
+    .toggle__menu{
+        span{
+            background: $clr-primary;
+            width: 3.5rem;
+            height: .3rem;
+            margin-bottom: .5rem;
+            display: block;
+            border-radius: 4rem;
+            transition: 1s ease;
+        }
+        
+    }
+    .toggle__menu.open{
+        span:first-child{
+            transform: translate(0, 10px) rotate(225deg);
+            transition: 1s ease;
+        }
+        span:nth-child(2){
+            opacity: 0;
+        }
+        span:last-child{
+            transform: translate(0, -7px) rotate(-225deg);
+        }
+    }
+
+    //  DESKTOP VIEW
+    @include mediaQuery($break-lg){
+        .toggle__menu{
+            display: none;
+        }
+        &__nav{
+            position: unset;
+            width: unset;
+            top: unset;
+            right: unset;
+            background: none;
+            width: unset;
+            height: unset;
+
+            ul{
+                display: flex;
+                li {
+                    margin-left: 2rem;
+                    a{
+                        color: $clr-light
+                    }
+                    &:hover{
+                        color: $clr-primary;
+                    }
+                }
+            }
+        }
+    }
 }
+

@@ -8,6 +8,14 @@ ul {
   list-style: none;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -232,6 +240,15 @@ body {
   margin-left: 20rem;
 }
 
+.header {
+  position: fixed;
+  width: 100%;
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .header .branding {
   display: flex;
   align-items: center;
@@ -242,7 +259,203 @@ body {
 .header .branding h3 {
   color: #ffffff;
   margin-left: 1rem;
+  font-size: 2rem;
 }
 .header .branding h3 span {
   color: #ffa700;
+}
+.header__nav {
+  position: absolute;
+  top: 8rem;
+  right: -100rem;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s ease;
+}
+.header__nav ul {
+  text-align: center;
+}
+.header__nav ul li {
+  padding: 3rem 0;
+  border-bottom: 1px solid #2b2b2b;
+}
+.header__nav ul li a {
+  color: #2b2b2b;
+  font-size: 2rem;
+}
+.header__nav ul li:hover a {
+  color: #ffa700;
+}
+.header .open {
+  right: 0;
+}
+.header .toggle__menu span {
+  background: #ffa700;
+  width: 3.5rem;
+  height: 0.3rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  border-radius: 4rem;
+  transition: 1s ease;
+}
+.header .toggle__menu.open span:first-child {
+  transform: translate(0, 10px) rotate(225deg);
+  transition: 1s ease;
+}
+.header .toggle__menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.header .toggle__menu.open span:last-child {
+  transform: translate(0, -7px) rotate(-225deg);
+}
+@media screen and (min-width: 970px) {
+  .header .toggle__menu {
+    display: none;
+  }
+  .header__nav {
+    position: unset;
+    width: unset;
+    top: unset;
+    right: unset;
+    background: none;
+    width: unset;
+    height: unset;
+  }
+  .header__nav ul {
+    display: flex;
+  }
+  .header__nav ul li {
+    margin-left: 2rem;
+  }
+  .header__nav ul li a {
+    color: #ffffff;
+  }
+  .header__nav ul li:hover {
+    color: #ffa700;
+  }
+}
+
+.banner {
+  padding: 11rem 0 4rem 0;
+}
+.banner__wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0 5rem;
+}
+.banner__text h1 {
+  color: #ffa700;
+  margin-bottom: 4rem;
+  font-size: 3.5rem;
+}
+.banner__text p {
+  text-align: justify;
+  margin-bottom: 7rem;
+  font-size: 2rem;
+}
+.banner__text a {
+  display: inline-block;
+  background: #ffa700;
+  border-radius: 3rem;
+  padding: 1.5rem 2.5rem;
+  color: #ffffff;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+}
+.banner__text a:hover {
+  background: #2b2b2b;
+  border: 1px solid #ffa700;
+  color: #ffa700;
+}
+.banner img {
+  width: 30rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 970px) {
+  .banner .banner__wrapper {
+    flex-direction: row;
+    margin: 7rem 0 0 0;
+  }
+  .banner .banner__wrapper img {
+    width: unset;
+  }
+  .banner .banner__text {
+    text-align: left;
+  }
+  .banner .banner__text h1 {
+    font-size: 11rem;
+    max-width: 52rem;
+    line-height: 0.8;
+    margin-bottom: 5rem;
+  }
+  .banner .banner__text p {
+    text-align: justify;
+    max-width: 40rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.hm-services {
+  padding: 5rem 0 3rem 0;
+  background: #2b2b2b;
+}
+.hm-services__wrapper {
+  display: block;
+  margin: 0 5rem;
+}
+.hm-services__item {
+  text-align: center;
+  margin: 7rem 0 10rem 0;
+}
+.hm-services__item i {
+  color: #ffa700;
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+.hm-services__item h4 {
+  color: #ffa700;
+  font-size: 2rem;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+.hm-services__item p {
+  color: #ffffff;
+  text-align: justify;
+  margin-bottom: 4rem;
+  font-size: 2rem;
+}
+.hm-services__item a {
+  display: inline-block;
+  background: #ffa700;
+  border-radius: 3rem;
+  padding: 1.5rem 2.5rem;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+.hm-services__item a:hover {
+  background: #2b2b2b;
+  border: 1px solid #ffa700;
+  color: #ffa700;
+}
+@media screen and (min-width: 970px) {
+  .hm-services .hm-services__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10rem;
+  }
+  .hm-services .hm-services__item i {
+    margin-bottom: 4rem;
+  }
+  .hm-services .hm-services__item h4 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  .hm-services .hm-services__item p {
+    margin-bottom: 6rem;
+    text-align: justify;
+  }
 }/*# sourceMappingURL=main.css.map */
